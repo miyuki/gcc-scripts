@@ -20,6 +20,12 @@ to create your own configuration, i.e.
 [build.py](build.py) is a shortcut for running GCC build from scratch.
 Essentially it runs configure and make with various commonly used options.
 
+Run
+
+    $ ./build.py -h
+
+to get full list of options.
+
 ### Usage examples
 
 Build the compiler proper for C and C++ languages (native):
@@ -38,10 +44,10 @@ Bootstrap and install GCC to `/opt` (edit `config.py` to change default path):
 
     $ ./build.py --bootstrap --install
 
-Run profiled bootstrap with --enable-checking="release":
+Run profiled bootstrap with `--enable-checking="release"`:
 
     $ ./build.py --release --fdo
 
-Also build and install fortran and libgccjit:
+Build and install C, C++ and Fortran compilers and libgccjit:
 
     $ ./build.py --languages=c,c++,lto,fortran,jit --bootstrap --install
