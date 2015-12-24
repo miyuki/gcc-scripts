@@ -23,19 +23,25 @@ Essentially it runs configure and make with various commonly used options.
 ### Usage examples
 
 Build the compiler proper for C and C++ languages (native):
+
     $ ./build.py
 
 Same for aarch64-linux target:
+
     $ ./build.py --target aarch64-linux
 
 Build debuggable version of the compiler (-Og -ggdb3):
+
     $ ./build.py -g
 
 Bootstrap and install GCC to `/opt` (edit `config.py` to change default path):
+
     $ ./build.py --bootstrap --install
 
-Run profiled bootstrap with --enable-checking="release"
+Run profiled bootstrap with --enable-checking="release":
+
     $ ./build.py --release --fdo
 
 Also build and install fortran and libgccjit:
+
     $ ./build.py --languages=c,c++,lto,fortran,jit --bootstrap --install
