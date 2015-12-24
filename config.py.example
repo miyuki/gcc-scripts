@@ -1,0 +1,45 @@
+# Configuration for GCC build script
+from __future__ import print_function
+
+import os
+import os.path
+
+pjoin = os.path.join
+pexists = os.path.exists
+
+cfg = { }
+
+root = os.path.expanduser('~')
+cfg['root_work_dir'] = root
+# Top of GCC source tree, by default: ~/gcc/src
+cfg['source_dir'] = pjoin(root, 'gcc', 'src')
+# Directory to for build (WARNING: contents of this directory will be deleted)
+cfg['build_dir'] = pjoin(root, 'gcc', 'build')
+# Temp dir for building from tarballs
+cfg['extract_dir'] = pjoin(root, 'temp', 'gcc_tarball_src')
+# Path to use for dowloaded GCC snapshot and release tarballs
+cfg['snapshot_dir'] = pjoin(root, 'distrib', 'gcc_snapshots')
+cfg['tarball_dir'] = pjoin(root, 'distrib', 'gcc_releases')
+# Default build type (see "build.py -h" output)
+cfg['default_build'] = 'minimal'
+
+# Target directory for GCC installation
+cfg['install_dir'] = '/opt'
+# Directory containing libraries compiled from source, such as isl
+cfg['libs_dir'] = None
+cfg['native_target'] = 'x86_64-pc-linux-gnu'
+
+# System (bootstrap) compiler
+if os.path.exists('/opt/gcc-5.3.0'):
+    cfg['stage0_gcc'] = '/opt/gcc-5.3.0/bin'
+elif os.path.exists('/opt/gcc-5.2.0'):
+    cfg['stage0_gcc'] = '/opt/gcc-5.2.0/bin'
+
+cfg['ftp_mirror'] = 'mirror2.babylon.network'
+cfg['remote_snapshot_dir'] = 'gcc/snapshots'
+cfg['remote_releases_dir'] = 'gcc/releases'
+
+cfg['maintained_branches'] = ['4.9', '5', '6']
+
+from gcc.common import dict_to_struct
+cfg = dict_to_struct(cfg)
