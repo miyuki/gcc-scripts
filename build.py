@@ -15,9 +15,8 @@ def main():
     try:
         from config import cfg
     except:
-        env.error('config.py not found. Please create config.py '
-                  '(see config.py.example)')
-        sys.exit(1)
+        env.fatal_error('config.py not found. Please create config.py '
+                        '(see config.py.example)')
 
     DEFAULT_LANG = bld.default_lang[:]
     DEFAULT_LANG_STR = ','.join(DEFAULT_LANG)

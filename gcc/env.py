@@ -107,7 +107,7 @@ class Environment:
         self.ok = self._console.ok
         self.alt_ok = self._console.alt_ok
         self._set_verbosity(2)
-        self.err = self._fatal_error if fatal_errors else self.warn
+        self.err = self.fatal_error if fatal_errors else self.warn
         self.error = self.err
         self.err_info = self._console.err_info
         self.con = self.console
@@ -115,7 +115,7 @@ class Environment:
     def _ignore_msg(self, message):
         pass
 
-    def _fatal_error(self, message):
+    def fatal_error(self, message):
         self._console.warn(message)
         sys.exit(1)
 

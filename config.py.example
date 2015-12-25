@@ -10,7 +10,6 @@ pexists = os.path.exists
 cfg = { }
 
 root = os.path.expanduser('~')
-cfg['root_work_dir'] = root
 # Top of GCC source tree, by default: ~/gcc/src
 cfg['source_dir'] = pjoin(root, 'gcc', 'src')
 # Directory to for build (WARNING: contents of this directory will be deleted)
@@ -23,7 +22,7 @@ cfg['tarball_dir'] = pjoin(root, 'distrib', 'gcc_releases')
 # Default build type (see "build.py -h" output)
 cfg['default_build'] = 'minimal'
 
-# Target directory for GCC installation
+# Target directory for GCC installation. Must be writable.
 cfg['install_dir'] = '/opt'
 # Directory containing libraries compiled from source, such as isl
 cfg['libs_dir'] = None
