@@ -6,11 +6,11 @@
 * [C-Reduce](https://embed.cs.utah.edu/creduce/). Also available as a package in
 Debian:
 
-    $ sudo apt-get install creduce
+    `$ sudo apt-get install creduce`
 
 ## fortran_delta.pl
 
-[fortran_delta.pl](fortran_delta.pl) is a patch version of
+[fortran_delta.pl](fortran_delta.pl) is a patched version of
 [delta](http://delta.tigris.org/) script adapted to work with Fortran sources,
 by Joost VandeVondele. Originally posted on the
 [mailing list](https://gcc.gnu.org/ml/gcc/2009-10/msg00618.html).
