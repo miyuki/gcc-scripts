@@ -15,7 +15,11 @@ to create your own configuration, i.e.
     $ cp config.py.example config.py
     $ vim config.py
 
-## build.py
+## Build
+
+These scripts are wrappers for GCC build system.
+
+### build.py
 
 [build.py](build.py) is a shortcut for running GCC build from scratch.
 Essentially it runs configure and make with various commonly used options.
@@ -26,7 +30,7 @@ Run
 
 to get full list of options.
 
-### Usage examples
+#### Usage examples
 
 Build the compiler proper for C and C++ languages (native):
 
@@ -52,7 +56,7 @@ Build and install C, C++ and Fortran compilers and libgccjit:
 
     $ ./build.py --languages=c,c++,lto,fortran,jit --bootstrap --install
 
-## tarball_build.py
+### tarball_build.py
 
 [tarball_build.py](tarball_build.py) - download GCC tarball (either released
 version or development snapshot), extract tarball, build and install. Directory
@@ -64,7 +68,7 @@ Run
 
 to get full list of options.
 
-### Usage examples
+#### Usage examples
 
 Download, build and install GCC 5.3.0:
 
@@ -78,3 +82,8 @@ Download, build and install latest snapshot of GCC 5 branch with
 List GCC versions available on FTP server:
 
     $ ./tarball_build.py -l
+
+## Testing
+
+Scripts for bug triage (and to certain extent, debugging) are located in
+[testing](testing) subdirectory.
